@@ -12,3 +12,7 @@ b. The url of: “amqp://guest:guest@localhost:5672” is the same as in the sub
 ![send_and_processing](send_and_processing.png)
 Hal yang terjadi adalah:
 Publisher membuat UserCreatedEventMessage, dan mengirimkannya ke "Queue" spesifik di RabbitMQ. RabbitMQ mencari yang "subscribed" ke queue tadi. Subscriber diberi notifikasi, mengambil datanya, dan memrosesnya dengan menampilkan di terminal.
+
+### Monitoring chart based on publisher.
+![monitoring_chart](chart_spike.png)
+Spike ungu adalah indikator vital yang menunjukkan bahwa pesan yang dikirimkan publisher tidak hanya "terkirim" ke RabbitMQ, tapi juga diterima dan diproses oleh subscriber.
