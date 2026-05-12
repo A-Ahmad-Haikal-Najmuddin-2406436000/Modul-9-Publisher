@@ -7,3 +7,8 @@ b. The url of: “amqp://guest:guest@localhost:5672” is the same as in the sub
 
 ### Running RabbitMQ
 ![Publisher broker image](publisher_broker.png)
+
+### Send and Processing Event
+![send_and_processing](send_and_processing.png)
+Hal yang terjadi adalah:
+Publisher membuat UserCreatedEventMessage, dan mengirimkannya ke "Queue" spesifik di RabbitMQ. RabbitMQ mencari yang "subscribed" ke queue tadi. Subscriber diberi notifikasi, mengambil datanya, dan memrosesnya dengan menampilkan di terminal.
